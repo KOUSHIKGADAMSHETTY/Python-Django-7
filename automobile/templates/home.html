@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+</head>
+<body>
+    <table border="3">    
+        <tr>
+            <th><h1>Name</h1></th>
+            <th><h1>color</h1></th>
+            <th><h1>Fuel</h1></th>
+        </tr>
+        {% for re in res %}
+        <tr>
+            <td><h2>{{ re.name }}</h2></td>
+            <td><h2>{{ re.color }}</h2></td>
+            <td><h2>{{ re.fuel }}</h2></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    
+    <form method="POST"> {% csrf_token %}
+        <br><label for="n1">Item ID: </label>
+        <input name="na" id="n3" type="number" placeholder="Enter Item Id:">
+        <button>submit</button>
+        </form><br>
+        {% if re %}
+        <h3>The item you have searched for {{ re.name }} and the color is {{ re.color }}</h3>
+        {% else %}
+        <h3> The item you are searching for is not available</h3>
+        {% endif %}
+
+
+
+        
+        </form>
+    </body>
+</body>
+</html>
+

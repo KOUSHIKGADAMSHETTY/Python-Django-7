@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <br><label for="n1">User Name:</label>
+        <input name="n" id="n1" type="text" placeholder="Enter User Name" required><br>
+        <br><br><button style="text-decoration: antiquewhite;">Verify</button>
+    </form><br>
+    {% if b %}
+    <h1>{{ b.username }} is a user</h1>
+    {% else %}
+    <h1>User not found</h1>
+    {% endif %}
+</body>
+</html>

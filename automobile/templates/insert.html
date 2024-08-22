@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Card</title>
+</head>
+<body>
+<hr>
+    <h1>Menu Card</h1>
+<hr>
+<table border="3">
+    <tr>
+        <th>Item Name</th>
+        <th>Color</th>
+        <th>Fuel</th>
+    </tr>
+    {% for res in re %}
+    <tr>
+        <td>{{ res.name }}</td>
+        <td>{{ res.color }}</td> 
+        <td>{{ res.fuel }}</td>
+    </tr> 
+    {% endfor %}
+</table>
+<form method="POST" action="{% url 'addinfo' %}">
+    {% csrf_token %}
+    <br><label for="n1">Item Name:</label>
+    <input name="a" id="n1" type="text" placeholder="Enter Item Name " required><br>
+    <br><label for="p1">Item Color:</label>
+    <input name="b" id="p1" type="text" placeholder="Enter Item color" required><br>
+    <br><label for="t1">Item Fuel:</label>
+    <input name="c" id="t1" type="text" placeholder="Enter Item Fuel" required><br>
+    <br><br><button style="text-decoration: antiquewhite;">Insert</button>
+</form><br>
+</body>
+</html>
